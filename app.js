@@ -10,10 +10,14 @@ import reservationRoute from "./routes/reservationRoute.js"
 const app=express();
 dotenv.config({path: "./config/config.env"});
 app.use(cors({
-  origin: [https://hotelwebsite-5z8y7g6yg-jigyasas-projects-b6074222.vercel.app],
+  origin: [
+    "https://hotelwebsite-lemon.vercel.app",
+    "https://hotelwebsite-5z8y7g6yg-jigyasas-projects-b6074222.vercel.app"
+  ],
   methods: ["POST"],
   credentials: true
 }));
+app.options("*", cors());
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
